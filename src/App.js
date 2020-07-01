@@ -1,6 +1,18 @@
 import React from 'react';
-import StepForm from './StepForm';
+import StepForm, { useStepForm } from './StepForm';
 import './App.css';
+
+const Form2 = () => {
+  const { setStep, length } = useStepForm();
+
+  return (
+    <div>
+      <p>step2</p>
+      <input defaultValue="2" />
+      can't wait, <button onClick={() => setStep(length - 1)}>finish</button>
+    </div>
+  );
+};
 
 function App() {
   return (
@@ -22,10 +34,7 @@ function App() {
         </div>
 
         {/* form step 2 */}
-        <div>
-          <p>step2</p>
-          <input defaultValue="2" />
-        </div>
+        <Form2 />
 
         {/* form step 3 */}
         <div>
